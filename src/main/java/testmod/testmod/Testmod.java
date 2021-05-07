@@ -34,6 +34,6 @@ public class Testmod implements ModInitializer {
          * In 1.15, this was done by a method override inside the entity class.
          * Most vanilla entities have a static method (eg. ZombieEntity#createZombieAttributes) for initializing their attributes.
          */
-        FabricDefaultAttributeRegistry.register(CUBE, CubeEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(CUBE, CubeEntity.createCubeAttributes());
     }
 }

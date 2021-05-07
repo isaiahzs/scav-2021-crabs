@@ -16,6 +16,6 @@ public class CubeEntityRenderer extends MobEntityRenderer<CubeEntity, CubeEntity
 
     @Override
     public Identifier getTexture(CubeEntity entity) {
-        return new Identifier("entitytesting", "textures/entity/cube/cube.png");
+        return new Identifier("crabmods", "textures/entity/cube/cube.png");
     }
 }
