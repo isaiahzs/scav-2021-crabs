@@ -1,6 +1,7 @@
 package testmod.testmod;
 
 import net.fabricmc.api.ModInitializer;
+import testmod.testmod.entity.CreeperCrabEntity;
 import testmod.testmod.entity.CubeEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -9,6 +10,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import testmod.testmod.entity.PigCrabEntity;
+import testmod.testmod.entity.VillagerCrabEntity;
 
 public class Testmod implements ModInitializer {
 
@@ -24,6 +27,24 @@ public class Testmod implements ModInitializer {
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CubeEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
 
+    public static final EntityType<CreeperCrabEntity> CRAEBBER = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier("crabmods", "craebber"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CreeperCrabEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+    );
+
+    public static final EntityType<PigCrabEntity> CROINK = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier("crabmods", "croink"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PigCrabEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+    );
+
+    public static final EntityType<VillagerCrabEntity> CRABBAGER = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier("crabmods", "crabbager"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, VillagerCrabEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+    );
+
     @Override
     public void onInitialize() {
         /*
@@ -35,5 +56,11 @@ public class Testmod implements ModInitializer {
          * Most vanilla entities have a static method (eg. ZombieEntity#createZombieAttributes) for initializing their attributes.
          */
         FabricDefaultAttributeRegistry.register(CUBE, CubeEntity.createCubeAttributes());
+
+        FabricDefaultAttributeRegistry.register(CRAEBBER, CreeperCrabEntity.createCreeperAttributes());
+
+        FabricDefaultAttributeRegistry.register(CROINK, PigCrabEntity.createPigCrabAttributes());
+
+        FabricDefaultAttributeRegistry.register(CRABBAGER, VillagerCrabEntity.createVillagerCrabAttributes());
     }
 }
