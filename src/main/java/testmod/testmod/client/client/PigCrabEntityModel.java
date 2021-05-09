@@ -19,7 +19,7 @@ public class PigCrabEntityModel extends EntityModel<PigCrabEntity> {
         textureHeight = 32;
 
         bb_main = new ModelPart(this);
-        bb_main.setPivot(0.0F, 24.0F, 0.0F);
+        bb_main.setPivot(0.0F, 13.0F, 0.0F);
         bb_main.setTextureOffset(0, 0).addCuboid(-4.0F, -4.0F, -8.0F, 8.0F, 8.0F, 8.0F, 0.0F, false);
         bb_main.setTextureOffset(24, 27).addCuboid(5.0F, 7.0F, 0.0F, 1.0F, 4.0F, 1.0F, 0.0F, false);
         bb_main.setTextureOffset(24, 27).addCuboid(5.0F, 7.0F, 5.0F, 1.0F, 4.0F, 1.0F, 0.0F, false);
